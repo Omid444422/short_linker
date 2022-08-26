@@ -178,8 +178,12 @@ include './private/jdf.php';
     
           <td>
             <a class="btn btn-danger" href="event.php?event=delete&id=<?php echo $links['ID']?>">delete</a>
-            <a class="btn btn-warning" href="event.php?event=delete&id=<?php echo $links['ID']?>">delete</a>
-          </td>
+                     <?php if($links['status'] === 1){ ?>
+                 <a class="btn btn-warning" href="event.php?event=off&id=<?php echo $links['ID']?>">turn off</a>
+                        <?php }elseif($link['status'] === 0){?>
+                <a class="btn btn-warning" href="event.php?event=on&id=<?php echo $links['ID']?>">turn on</a>
+                            <?php }?>
+            </td>
         </tr>
     
                                     <?php }}}?>
