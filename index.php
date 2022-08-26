@@ -90,7 +90,7 @@ include './private/jdf.php';
     
     ?>
     
-
+        <?php  if(!isset($_GET['event'])){ ?>
     <div class="container-fluid row justify-content-center mt-5">
             <div class="col-8 bg-light mt-3">
                 <form action="./index.php" method="POST">
@@ -102,6 +102,7 @@ include './private/jdf.php';
             <hr>
             <button type="submit" name="btn_submit" class="btn btn-success">ارسال</button>
                 </form>
+                <?php }?>
                 <br>
                 <?php if($error !== ''){ ?>
                 <span class="alert-danger p-2 m-2d"><?php echo $error; ?></span>
