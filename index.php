@@ -161,7 +161,7 @@ include './private/jdf.php';
           </td>
     
           <td>
-          <a href="<?php echo $links['link_address']; ?>"><?php echo $links['link_address']; ?></a>
+          <a href="./links/<?php echo $links['link_address']; ?>.php"><?php echo $links['link_address']; ?></a>
           </td>
     
           <td>
@@ -180,7 +180,7 @@ include './private/jdf.php';
             <a class="btn btn-danger" href="event.php?event=delete&id=<?php echo $links['ID']?>">delete</a>
                      <?php if($links['status'] == 1){ ?>
                  <a class="btn btn-warning" href="event.php?event=off&id=<?php echo $links['ID']?>">turn off</a>
-                        <?php }elseif($link['status'] == 0){?>
+                        <?php }else{?>
                 <a class="btn btn-warning" href="event.php?event=on&id=<?php echo $links['ID']?>">turn on</a>
                             <?php }?>
             </td>
