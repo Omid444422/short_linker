@@ -116,68 +116,78 @@ include './private/jdf.php';
                 <?php if($link !== ''){ ?>
                     <?php echo $link; ?>
                 <?php }?>
+            </div>
+    </div>
 
 
 
-              
-                    <?php 
+
+
+
+
+    <div class="container-fluid row justify-content-center mt-5">
+    <div class="col-10">
+                        
                     
-                    if(isset($_GET['event']) && $_GET['event'] === 'url_list'){
-                             ?>
-
-<table class="table table-dark">
-                <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">creator</th>
-      <th scope="col">link address</th>
-      <th scope="col">send user link</th>
-      <th scope="col">create time</th>
-      <th scope="col">status</th>
-      <th scope="col">events</th>
-
-    </tr>
-  </thead>
-  <tbody>
-                      <?php  $get_links = $connection->query("SELECT * FROM links");
-
-                        if($get_links->num_rows >0){
-                            while($links = $get_links->fetch_assoc()){
-                    ?>
- 
-    <tr>
-      <th scope="row"><?php echo $links['ID']; ?></th>
-      <td>
-        <?php echo $links['creator']; ?>
-      </td>
-
-      <td>
-      <a href="<?php echo $links['link_address']; ?>"><?php echo $links['link_address']; ?></a>
-      </td>
-
-      <td>
-      <a href="<?php echo $links['link_url']; ?>"><?php echo $links['link_url']; ?></a>
-      </td>
-
-      <td>
-     <?php echo $links['create_time']; ?>
-      </td>
-
-      <td>
-     <?php echo $links['status']; ?>
-      </td>
-
-      <td>
-        <a href="event.php?event=remove&id=<?php echo $links['ID']?>">delete</a>
-      </td>
-    </tr>
-
-                                <?php }}}?>
-
-                                </tbody>
-</table>
-
-
+                        <?php 
+                        
+                        if(isset($_GET['event']) && $_GET['event'] === 'url_list'){
+                                 ?>
+    
+    <table class="table table-dark">
+                    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">creator</th>
+          <th scope="col">link address</th>
+          <th scope="col">send user link</th>
+          <th scope="col">create time</th>
+          <th scope="col">status</th>
+          <th scope="col">events</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+                          <?php  $get_links = $connection->query("SELECT * FROM links");
+    
+                            if($get_links->num_rows >0){
+                                while($links = $get_links->fetch_assoc()){
+                        ?>
+     
+        <tr>
+          <th scope="row"><?php echo $links['ID']; ?></th>
+          <td>
+            <?php echo $links['creator']; ?>
+          </td>
+    
+          <td>
+          <a href="<?php echo $links['link_address']; ?>"><?php echo $links['link_address']; ?></a>
+          </td>
+    
+          <td>
+          <a href="<?php echo $links['link_url']; ?>"><?php echo $links['link_url']; ?></a>
+          </td>
+    
+          <td>
+         <?php echo $links['create_time']; ?>
+          </td>
+    
+          <td>
+         <?php echo $links['status']; ?>
+          </td>
+    
+          <td>
+            <a class="btn btn-danger" href="event.php?event=delete&id=<?php echo $links['ID']?>">delete</a>
+            <a class="btn btn-warning" href="event.php?event=delete&id=<?php echo $links['ID']?>">delete</a>
+          </td>
+        </tr>
+    
+                                    <?php }}}?>
+    
+                                    </tbody>
+    </table>
+    
+    
             </div>
     </div>
 
