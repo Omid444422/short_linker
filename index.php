@@ -138,15 +138,13 @@ include './private/jdf.php';
 
     </tr>
   </thead>
-
+  <tbody>
                       <?php  $get_links = $connection->query("SELECT * FROM links");
 
                         if($get_links->num_rows >0){
                             while($links = $get_links->fetch_assoc()){
                     ?>
-                            <table class="table table-dark">
  
-  <tbody>
     <tr>
       <th scope="row"><?php echo $links['ID']; ?></th>
       <td>
@@ -173,16 +171,11 @@ include './private/jdf.php';
         <a href="event.php?event=remove&id=<?php echo $links['ID']?>">delete</a>
       </td>
     </tr>
-  </tbody>
-</table>
-
-
-
-
 
                                 <?php }}}?>
 
-
+                                </tbody>
+</table>
 
 
             </div>
