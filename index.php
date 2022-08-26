@@ -119,7 +119,13 @@ include './private/jdf.php';
 
 
 
-                <table class="table table-dark">
+              
+                    <?php 
+                    
+                    if(isset($_GET['event']) && $_GET['event'] === 'url_list'){
+                             ?>
+
+<table class="table table-dark">
                 <thead>
     <tr>
       <th scope="col">#</th>
@@ -132,11 +138,8 @@ include './private/jdf.php';
 
     </tr>
   </thead>
-                    <?php 
-                    
-                    if(isset($_GET['event']) && $_GET['event'] === 'url_list'){
 
-                        $get_links = $connection->query("SELECT * FROM links");
+                      <?php  $get_links = $connection->query("SELECT * FROM links");
 
                         if($get_links->num_rows >0){
                             while($links = $get_links->fetch_assoc()){
