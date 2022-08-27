@@ -25,7 +25,7 @@ if($_GET['id'] !== '' && $_GET['event'] !== ''){
         $result = $connection->query("SELECT * FROM links WHERE `ID`='$id' ");
         if($result->num_rows > 0){
             while($link = $result->fetch_assoc()){
-                unlink("./links/".$link['link_address']);
+                unlink("./links/".$link['link_address'].".php");
             }
             $result = $connection->query("DELETE FROM links WHERE `ID`='$id'");
             

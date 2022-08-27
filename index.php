@@ -120,7 +120,9 @@ include './private/jdf.php';
     </div>
 
 
-
+                    <?php
+                      
+                    ?>
 
 
 
