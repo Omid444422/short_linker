@@ -24,7 +24,13 @@ if($_GET['id'] !== '' && $_GET['event'] !== ''){
     if($event == 'delete'){
         $result = $connection->query("SELECT * FROM links WHERE `ID`='$id' ");
         if($result->num_rows > 0){
+            while($link = $result->fetch_assoc()){
+                unlink("./links/".$link['link_address']);
+            }
             $result = $connection->query("DELETE FROM links WHERE `ID`='$id'");
+            
+            
+            
             header('location:index.php?event=url_list');
         }
     }
