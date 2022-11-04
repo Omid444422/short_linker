@@ -1,6 +1,6 @@
 <?php
 include './private/database.php';
-include './private/jdf.php';
+include './private/jdf.php'; 
 ?>
 
 
