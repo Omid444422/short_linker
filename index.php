@@ -187,6 +187,7 @@ include './private/jdf.php';
                             <?php }?>
             </td>
         </tr>
+        </tr>
     
                                     <?php }}}?>
     
